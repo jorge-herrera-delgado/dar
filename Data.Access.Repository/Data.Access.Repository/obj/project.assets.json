@@ -5424,11 +5424,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/jorge/Documents/wwwroot/Data.Access.Repository/Data.Access.Repository/Data.Access.Repository.csproj",
+      "projectUniqueName": "/Users/jorge/Documents/GitHub/dar/Data.Access.Repository/Data.Access.Repository/Data.Access.Repository.csproj",
       "projectName": "Data.Access.Repository",
-      "projectPath": "/Users/jorge/Documents/wwwroot/Data.Access.Repository/Data.Access.Repository/Data.Access.Repository.csproj",
+      "projectPath": "/Users/jorge/Documents/GitHub/dar/Data.Access.Repository/Data.Access.Repository/Data.Access.Repository.csproj",
       "packagesPath": "/Users/jorge/.nuget/packages/",
-      "outputPath": "/Users/jorge/Documents/wwwroot/Data.Access.Repository/Data.Access.Repository/obj",
+      "outputPath": "/Users/jorge/Documents/GitHub/dar/Data.Access.Repository/Data.Access.Repository/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
