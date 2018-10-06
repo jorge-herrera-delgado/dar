@@ -74,7 +74,7 @@ In order to implement it in any Repository, we need several steps. **I promise, 
             var result = new Person();
             _dataBaseDataSource.DataTransaction.Execute(_dataBaseDataSource, r1 => 
             result = r1.GetItem<Person, OracleDynamicParameters>
-            (@"SELECT * FROM PERSON WHERE PERSON_ID = :pi_person_id",
+            (@"SELECT * FROM PEOPLE WHERE PERSON_ID = :pi_person_id",
                     param, CommandType.Text)).CompleteTransaction();
 
             return result;
@@ -180,7 +180,7 @@ It will add the assemblies into memory in order to use any of the sources that t
 ```c#
 new DataBaseRepositoryBase(connectionProvider, dataBaseType);
 ```
-You might wonder, what is `connectionProvider`? Well, this is where we provide our configuration to the framework. We can create our own custome dependency but let's use the default class.
+You might wonder, what is `connectionProvider`? Well, this is where we provide our configuration to the framework. We can create our own custom dependency but let's use the default class.
 ```c#
 new ConnectionProvider(connection);
 ```
@@ -218,13 +218,13 @@ public void Person_Not_Null()
 	var baseRepository = new DataBaseRepositoryBase(provider, DataBaseType.Oracle);	
 	IPeople peopleRepository = new Oracle.PeopleRepository(baseRepository);
 	var person7 = peopleRepository.GetPerson(7);
-	Assert.IsTrue(person != null);
+	Assert.IsTrue(person7 != null);
 	
 	//Sql
 	baseRepository = new DataBaseRepositoryBase(provider, DataBaseType.Sql);
 	peopleRepository = new Sql.PeopleRepository(baseRepository);
 	var person2 = peopleRepository.GetPerson(2);
-	Assert.IsTrue(person != null);
+	Assert.IsTrue(person2 != null);
 }
 ```
 
@@ -253,7 +253,7 @@ public void Person_Not_Null()
 	var baseRepository = new MongoRepositoryBase(provider);
 	IPeople peopleRepository = new Mongo.PeopleRepository(baseRepository);
 	var person3 = peopleRepository.GetPerson(3);
-	Assert.IsTrue(person != null);
+	Assert.IsTrue(person3 != null);
 }
 ```
 
