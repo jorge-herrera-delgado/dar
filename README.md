@@ -130,10 +130,11 @@ in [Step 1](https://github.com/jorge-herrera-delgado/dar/new/master?readme=1#ste
    public class PeopleRepository : IPeople
     {
         public SourceType SourceType => SourceType.NonSql;
+
         private readonly INonSqlDataSource _nonSqlDataSource;
         private readonly NonSqlSchema _nonSqlSchema = new NonSqlSchema("DataBaseName", "CollectionName");
 
-        public ServerModeRepository(INonSqlDataSource nonSqlDataSource)
+        public PeopleRepositoryMdb(INonSqlDataSource nonSqlDataSource)
         {
             _nonSqlDataSource = nonSqlDataSource;
         }
@@ -144,14 +145,14 @@ in [Step 1](https://github.com/jorge-herrera-delgado/dar/new/master?readme=1#ste
         }
 
         public Person GetPerson(int id)
-	    {
-            return _nonSqlDataSource.GetItem(_nonSqlSchema, p => p.PersonId == id);
-	    }
+        {
+            return _nonSqlDataSource.GetItem<Person>(_nonSqlSchema, p => p.PersonId == id);
+        }
 
-        public bool LogServerMode(Person person)
-	    {
+        public bool AddPerson(Person person)
+        {
             return _nonSqlDataSource.Insert(_nonSqlSchema, person);
-	    }
+        }
     }
    ```
 ### Points of Interest
