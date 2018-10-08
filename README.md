@@ -48,7 +48,7 @@ In order to implement it in any Repository, we need several steps. **I promise, 
         private readonly IDataBaseDataSource _dataBaseDataSource;
         public SourceType SourceType => SourceType.Database;
 
-        public ServerModeRepository(IDataBaseDataSource dataBaseDataSource)
+        public PeopleRepository(IDataBaseDataSource dataBaseDataSource)
         {
             _dataBaseDataSource = dataBaseDataSource;
         }
